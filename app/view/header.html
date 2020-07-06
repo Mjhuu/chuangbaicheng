@@ -1,0 +1,54 @@
+<nav style="padding: 15px 15px 15px 0;left: 0;top: 0;z-index: 9999"
+     class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+    <a style="padding: 0 20px;" class="navbar-brand" href="#">
+        <img style="width: 40px;object-fit: cover;height: 40px;border-radius: 50%;margin-right: 10px;" src="/images/logo.png" alt="">
+        青岛创百城显示科技
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left: 20px;">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+                <a class="nav-link" href="/">首页</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    核心产品
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for item in produceArr %}
+                    <a class="dropdown-item" href="/kind/{{item}}">{{item}}</a>
+                    {% endfor %}
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="anli" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    案例参考
+                </a>
+                <div class="dropdown-menu" aria-labelledby="anli">
+                    {% for item in produceArr %}
+                    <a class="dropdown-item" href="/eg/{{item}}">{{item}}</a>
+                    {% endfor %}
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/services">售后服务</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/technology">技术支持</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">关于我们</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
+                   style="color: white;font-weight:bold;position: relative;top: 6px;"><p class="mjhu-phone"><span></span>18661787560</p></a>
+            </li>
+        </ul>
+    </div>
+</nav>

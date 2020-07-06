@@ -1,0 +1,93 @@
+.bg-dark{
+    background-color: #1a1b1f !important;
+}
+body{
+    background-color: #1a1b1f
+}
+div.header-top{
+    width: 100%;
+    height: 720px;
+    background: url("/images/bg.jpg") no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.header-top>div.content{
+    width: 646px;
+    background-color: rgba(0, 0, 0, .2);
+    color: white;
+    padding: 20px;
+    box-sizing: content-box;
+}
+div.header-top>div.content>h1{
+    text-align: center;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+div.header-top>div.content>p{
+    text-align: center;
+    font-size: 48px;
+}
+/*产品*/
+section.produce, section.contact{
+    width: 100%;
+    color: #fff;
+    padding: 20px 0;
+}
+section.produce{
+    background: url("/images/9227819.jpg") center center / cover no-repeat;
+}
+section.contact{
+    background: url("/images/9220304.jpg") center center / cover no-repeat;
+}
+section.produce>.container>.top, section.contact>.container>.top{
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+}
+section.produce>.container>.top>.title, section.contact>.container>.top>.title{
+    font-size: 30px;
+}
+
+#map{
+    height: 480px;
+}
+.contact-list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contact-item{
+    width: 100%;
+    min-height: 50px;
+}
+.contact-item>p{
+    padding-left: 10px;
+    line-height: 30px;
+}
+.contact-item>p>span{
+    padding-left: 10px;
+}
+.contact-item>img{
+    width: 150px;
+    height: 150px;
+    border: 3px solid #fff;
+}
+
+@media screen and (max-width: 576px) {
+    div.header-top>div.content>h1{
+        font-size: 38px;
+    }
+    div.header-top>div.content>p{
+        font-size: 20px;
+    }
+    section.produce>.container>.top, section.contact>.container>.top{
+        font-size: 17px;
+    }
+    section.produce>.container>.top>.title, section.contact>.container>.top>.title{
+        font-size: 22px;
+    }
+}

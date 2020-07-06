@@ -1,0 +1,77 @@
+<!--继承base.html的基础模板-->
+{% extends "base.html" %}
+<!--新增样式-->
+{% block style %}
+<link href="/css/produce.css" rel="stylesheet">
+{% endblock %}
+<body>
+{% include "header.html" %}
+<!--主要内容-->
+{% block body %}
+<section class="cbc-black">
+    <section class="container" style="padding: 20px 0;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item active" aria-current="page">案例参考</li>
+                {% if errCode !== 404 %}
+                <li class="breadcrumb-item active" aria-current="page"><a href="/eg/{{egName}}">{{egName}}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{produceName}}</li>
+                {% endif %}
+            </ol>
+        </nav>
+        {% if errCode !== 404 %}
+        <!--产品-->
+        <a style="margin: 0 20px 20px;" href="#" class="badge badge-primary">阅读 {{produceInfo.readCount}}</a>
+        <!--轮播-->
+<!--        <section class="banner">-->
+<!--            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">-->
+<!--                <div class="carousel-inner">-->
+<!--                    {% for item in produceInfo.imgUrl %}-->
+<!--                    <div class="carousel-item {{loop.index === 1 and 'active' or ''}}">-->
+<!--                        <img src="{{item}}" class="d-block w-100" alt="...">-->
+<!--                    </div>-->
+<!--                    {% endfor %}-->
+<!--                </div>-->
+<!--                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">-->
+<!--                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--                    <span class="sr-only">Previous</span>-->
+<!--                </a>-->
+<!--                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">-->
+<!--                    <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--                    <span class="sr-only">Next</span>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--        </section>-->
+<!--        <div class="bar">-->
+<!--            <div></div>-->
+<!--        </div>-->
+        <h1 class="title">{{produceName}}</h1>
+        <!--视频-->
+        {% if produceInfo.video %}
+        <section class="video">
+            <video src="{{produceInfo.video}}" controls></video>
+        </section>
+        {% endif %}
+        {% endif %}
+        <!--404-->
+        {% if errCode === 404 %}
+        <div class="jumbotron">
+            <h1 class="display-4">404</h1>
+            <p class="lead">“{{produceName}}”案例不存在</p>
+            <hr class="my-4">
+            <p>很抱歉，您搜索的“{{produceName}}”案例不存在，可以通过导航条 <span class="badge badge-info">案例参考</span> 案例分类进行查看。</p>
+            <a class="btn btn-primary" href="/" role="button">回到首页</a>
+        </div>
+        {% endif %}
+    </section>
+    <!--尾部备案-->
+    {% include "footer.html" %}
+</section>
+{% endblock %}
+<!--js插槽-->
+{% block script %}
+<script>
+
+</script>
+{% endblock %}

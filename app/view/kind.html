@@ -1,0 +1,67 @@
+<!--继承base.html的基础模板-->
+{% extends "base.html" %}
+<!--新增样式-->
+{% block style %}
+<link href="/css/produce.css" rel="stylesheet">
+{% endblock %}
+<body>
+{% include "header.html" %}
+<!--主要内容-->
+{% block body %}
+<section class="cbc-black">
+    <section class="container" style="padding: 20px 0;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item active" aria-current="page">核心产品</li>
+                <li class="breadcrumb-item active" aria-current="page">{{kindName}}</li>
+            </ol>
+        </nav>
+        <!--渲染-->
+        {% if produceList.length !== 0%}
+            <ul class="produce-list">
+                {% for produce in produceList %}
+                <li class="produce-item">
+                    <a href="/produce/{{produce.produceName}}">
+                        <div class="img">
+                            <img src="{{produce.imgUrl[0]}}" alt="">
+                        </div>
+                        <div class="bottom ellipsis">
+                            {{produce.produceName}}
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <!--404-->
+        {% if errCode === 404 %}
+        <div class="jumbotron">
+            <h1 class="display-4">404</h1>
+            <p class="lead">“{{kindName}}”产品分类不存在</p>
+            <hr class="my-4">
+            <p>很抱歉，您搜索的“{{kindName}}”产品分类不存在，可以通过导航条 <span class="badge badge-info">核心产品</span> 产品分类进行查看。</p>
+            <a class="btn btn-primary" href="/" role="button">回到首页</a>
+        </div>
+        {% endif %}
+        {% if produceList.length === 0 and errCode === 0 %}
+        <!--405-->
+        <div class="jumbotron">
+            <h1 class="display-4">405</h1>
+            <p class="lead">“{{kindName}}”产品分类尚未发布分类产品</p>
+            <hr class="my-4">
+            <p>很抱歉，您搜索的“{{kindName}}”产品分类尚未发布分类产品，可以通过导航条 <span class="badge badge-warning">核心产品</span> 产品分类进行查看。</p>
+            <a class="btn btn-primary" href="/" role="button">回到首页</a>
+        </div>
+        {% endif %}
+    </section>
+    <!--尾部备案-->
+    {% include "footer.html" %}
+</section>
+{% endblock %}
+<!--js插槽-->
+{% block script %}
+<script>
+
+</script>
+{% endblock %}

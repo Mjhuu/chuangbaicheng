@@ -1,0 +1,87 @@
+<!--继承base.html的基础模板-->
+{% extends "base.html" %}
+<!--新增样式-->
+{% block style %}
+<link href="/css/technology.css" rel="stylesheet">
+{% endblock %}
+<body>
+{% include "header.html" %}
+<!--主要内容-->
+{% block body %}
+<section class="cbc-black">
+    <section class="container" style="padding: 20px 0;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{nav}}</li>
+            </ol>
+        </nav>
+        <article class="technology-box">
+            <h2 class="common-title animated bounceInLeft">我们的团队 Our Team</h2>
+            <section class="row">
+                <div class="col-lg-6 col-md-12 man-box animated flipInX">
+                    <div class="left">
+                        <div class="left">
+                            <img src="/images/avatar/11581507.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <h5>平面设计师 高阳</h5>
+                            <p>
+                                多年来在平面设计技术上孜孜不倦地求新求变，客户往往关注于她那具有时代意义的创新手法上，将她评价为痴迷于项目平面设计的革新者。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 man-box animated flipInX">
+                    <div class="left">
+                        <div class="left">
+                            <img src="/images/avatar/11581507.jpg" alt="">
+                        </div>
+                        <div class="right">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 man-box animated flipInX">
+                    <div class="left">
+                        <div class="left">
+                            <img src="/images/avatar/11581507.jpg" alt="">
+                        </div>
+                        <div class="right">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 man-box animated flipInX">
+                    <div class="left">
+                        <div class="left">
+                            <img src="/images/avatar/11581507.jpg" alt="">
+                        </div>
+                        <div class="right">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 man-box animated flipInX">
+                    <div class="left">
+                        <div class="left">
+                            <img src="/images/avatar/11581507.jpg" alt="">
+                        </div>
+                        <div class="right">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </section>
+    <!--尾部备案-->
+    {% include "footer.html" %}
+</section>
+{% endblock %}
+<!--js插槽-->
+{% block script %}
+<script>
+
+</script>
+{% endblock %}

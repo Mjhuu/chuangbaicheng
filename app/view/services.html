@@ -1,0 +1,144 @@
+<!--继承base.html的基础模板-->
+{% extends "base.html" %}
+<!--新增样式-->
+{% block style %}
+<link href="/css/services.css" rel="stylesheet">
+{% endblock %}
+<body>
+{% include "header.html" %}
+<!--主要内容-->
+{% block body %}
+<section class="cbc-black">
+    <section class="container" style="padding: 20px 0;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{nav}}</li>
+            </ol>
+        </nav>
+        <article class="services-box">
+            <h2 class="common-title animated rubberBand">售后服务  After Service</h2>
+            <ul class="nav nav-pills mb-3 justify-content-center" style="margin-top: 20px" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-pre-tab" data-toggle="pill" href="#pills-pre" role="tab" aria-controls="pills-home" aria-selected="true">售前服务</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-middle-tab" data-toggle="pill" href="#pills-middle" role="tab" aria-controls="pills-middle" aria-selected="false">售中服务</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-after-tab" data-toggle="pill" href="#pills-after" role="tab" aria-controls="pills-after" aria-selected="false">售后服务</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">保外服务</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-pre" role="tabpanel" aria-labelledby="pills-pre-tab">
+                    <section class="row">
+                        <div class="col-lg-4 col-md-12 service-box animated fadeInUp">
+                            <div>
+                                <h6>创意构思</h6>
+                                <p>以多维的角度，充分利用现有的空间结构合理布局，精准把握客户展馆建设的目的与意义，实施极具表现力的创意及专业设计；从而发掘独具震撼力的展示效果，有效刺激市场并深入传达所展示目的。在充分考虑技术所能达到的基础上，帮助客户节约成本提升展示效果。</p>
+                                <p>项目展示：针对于不同类型展馆，我们都有成套的技术方案、图片、视频的展示，并提供经典的项目案例（图片、视频、效果图）以供客户参考选择，帮助客户更好的理解多媒体互动技术在展馆展厅中的运用。，帮助客户更好的理解我们的多媒体互动技术及在展馆展厅当中的运用。</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 service-box animated fadeInUp">
+                            <div>
+                                <h6>现场勘察</h6>
+                                <p>收集完成客户初步需求后，与客户商定时间并组织技术人员勘察现场，测量空间尺寸，为客户提供最优的弱电布线、展项的合理布局与最佳的安装方式，以最大限度的为客户节省预算。</p>
+                                <p>挖掘需求：当客户对于项目展项功能不明确，对多媒体展项感兴趣，却对多媒体应用方向不了解时，我们的销售人员会耐心倾听客户的表达与诉求，以多年专业的现场实施经验进行综合分析，推荐最适合客户项目的多媒体展项。</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 service-box animated fadeInUp">
+                            <div>
+                                <h6>制定方案</h6>
+                                <p>需求：对于所有客户，我们都会安排最专业的销售人员进行对接，真诚沟通，专业服务，并记录存档，为后面更深入的沟通和展项推荐做好铺垫，也为后续的合作做好最充分的准备。</p>
+                                <p>深入探究项目的整体情况，全面掌握其要达到的目标，策划详实准确的展示提纲，用以确立创意方向。收集客户现有资料，深入详细分析，提取关键元素，合理运用色彩，综合考虑科技、人文、环保，提供优质的多媒体运用方案。</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="tab-pane fade" id="pills-middle" role="tabpanel" aria-labelledby="pills-middle-tab">
+                    <section class="row">
+                        <div class="col-lg-4 col-md-12 service-box animated fadeInUp">
+                            <div>
+                                <h6>方案对接</h6>
+                                <p>紧紧围绕客户的展陈大纲，展厅设计方案，安排项目经理与客户负责人沟通现场装饰布展进度，制定多媒体施工进度表。安排内容设计人员深入沟通内容制作的细节，搜集内容素材；安排工程技术人员进行图纸对接，绘制多媒体布线图，拓扑图等。全面考虑并规避现场可能遇到的风险，为进场施工做好充足的准备。</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 service-box animated fadeInUp">
+                            <div>
+                                <h6>现场交底</h6>
+                                <p>安排项目经理及技术人员进驻现场，对展厅巡场，并与客户负责人对照施工图纸及展厅效果图，逐一确认展项及机房位置，做好现场交底，积极配合客户施工安排，提高效率。
+
+                                    项目范围管理：明确方向确定最终落地方案;最终确认整体方案多媒体展项;硬件设备、数字内容、软件开发工作范围把控与检验;对实施过程中的变更及时响应及控制。</p>
+                                <p>项目时间管理：制定施工进度表，明确各节点时间框架及周期；设备备货时间;设备进场时间；内容素材整理、内容制作及交付初稿时间;内容调整最终交付时间；技术人员进场施工时间;最终联调及交付时间;验收时间。</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 service-box animated fadeInUp">
+                            <div>
+                                <h6>项目管理</h6>
+                                <p>项目质量管理：施工图纸交底：由项目经理、参与制作人员及技术总监共同与客户负责人核验图纸；设备材料选型：项目中的硬件设备及材料与相关负责人审核确认；设备出厂进场：设备出厂发货前及进场前检验；现场调试节点：设备安装、软件调试过程中对设备运行状况的检测，发现问题，及时解决立即更换；项目交付使用：设备交付使用后，定期安排人员巡检。</p>
+                                <p>项目风险管理：风险识别：对项目实施可能发生的风险进行罗列，做好及时应对的准备；定性、定量分析：评估风险的发生概率及影响，进行排序；规划风险应付：针对可能遇到的风险编制全满的应急预案；监控风险：检测项目风险及故障状况，并形成汇报存档，避免再次出现类似故障风险。</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="tab-pane fade" id="pills-after" role="tabpanel" aria-labelledby="pills-after-tab">
+                    <section class="row">
+                        <div class="col-lg-4 col-md-12 service-box animated fadeInUp">
+                            <div>
+                                <h6>现场培训</h6>
+                                <p>多媒体项目施工完毕后与现场维护人员进行技术交接，并安排技术对甲方指派人员进行不少于2个工作日的使用培训，并记录培训过程中的设备运行状态，对甲方指派人员做最终使用交接。</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 service-box animated fadeInUp">
+                            <div>
+                                <h6>定期巡查</h6>
+                                <p>创百城显示科技承诺在项目服务质保时间内，每六个月巡馆一次，对设备运行情况做深入分析，排除发生故障的风险，保证客户展厅的正常开放及设备的正常使用，降低客户的运营风险。</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 service-box animated fadeInUp">
+                            <div>
+                                <h6>无缝响应</h6>
+                                <p>售后服务以电话、传真、电子邮件、现场服务等其中的任何一种方式，以方便客户为原则。</p>
+                                <p>接到售后电话后，立即响应，2小时内提出解决方案给予回复； 24小时内解决问题，48小时修复，为您提供最快的现场支持。成品自验收合格之日起一年内提供无偿维修服务，终身提供基于成本价格的维修服务。不定时的进行跟踪调查服务，并建立客户服务跟踪档案，随时记录用户的使用、保养、维护信息，以便于提出技术改进方案，为客户更好的服务。</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <section class="row">
+                        <div class="col-lg-4 col-md-12 service-box animated fadeInUp">
+                            <div>
+                                <h6>硬件维护</h6>
+                                <p>我司产品自验收之日起1年内免费保修，终身维护（人为故障和非人力所能抗拒的自然灾害所带来的损失除外）。公司拥有充足的备品备件，所有备品备件都是全新产品，与原件的型号及性能保持一致。如硬件损坏，质保期内我们免费保修或更换，质保期外我们将按照原合同单价提供设备及配件更换。</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 service-box animated fadeInUp">
+                            <div>
+                                <h6>软件升级</h6>
+                                <p> 我司提供软件终身免费升级服务。质保期内，项目中所应用的软件如出现问题，我公司立即响应按售后响应机制，安排专业软件人员及时处理。质保期外我们将按照原合同单价提供设备及配件更换。</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 service-box animated fadeInUp">
+                            <div>
+                                <h6>内容更新</h6>
+                                <p>合同执行完毕后，我公司均可免费提供内容更新指导。</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </article>
+    </section>
+    <!--尾部备案-->
+    {% include "footer.html" %}
+</section>
+{% endblock %}
+<!--js插槽-->
+{% block script %}
+<script>
+
+</script>
+{% endblock %}

@@ -1,0 +1,24 @@
+.services-box{
+
+}
+.service-box{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.service-box>div{
+    width: 328px;
+    padding: 20px;
+    background-color: rgba(104, 107, 110, 0.5);
+}
+.service-box>div>h6{
+    color: #18de97;
+    font-size: 20px;
+    line-height: 60px;
+    text-align: center;
+}
+.service-box>div>p{
+    text-indent: 2em;
+    font-size: 15px;
+}
+

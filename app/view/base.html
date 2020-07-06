@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name=description content="青岛创百城显示科技，主营：5D全息宴会厅 沉浸式光影餐厅 互动投影。雾幕投影。LED液晶屏拼接。LED柔性屏 户外电子屏。3D全息风扇屏。自主终端一体机。360度全息柜。透明屏展示柜。智能茶几。智能黑板。智能调光膜。智能魔镜">
+    <meta name=keywords content=青岛创百城显示科技,5D全息宴会厅,创百城,创百城显示科技,沉浸式光影餐厅,互动投影,LED液晶屏拼接,LED柔性屏,户外电子屏,3D全息风扇屏,自主终端一体机,360度全息柜,透明屏展示柜,智能茶几,智能黑板,智能调光膜,智能魔镜>
+    <meta name="baidu-site-verification" content="J8p2jQRlAQ" />    
+    <title>{{title}}</title>
+    <link rel=icon href=/favicon.ico>
+    <link href="/css/reset.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+    <style>
+
+        ul.produce-list{
+            width: 100%;
+            list-style: none;
+            display: flex;
+            color: white;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        a, a:hover, a:link, a:focus, a:visited, a:active{
+            text-decoration: none;
+        }
+        ul.produce-list a{
+            color: white;
+        }
+        ul.produce-list li{
+            width: 330px;
+            height: 220px;
+            margin: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all .3s;
+            border-radius: 10px;
+        }
+        li.produce-item:active{
+            transform: scale(.9);
+        }
+        li.produce-item:hover img{
+            transform: scale(1.1);
+        }
+        ul.produce-list>li:hover .bottom{
+            background-color: rgba(38, 38, 38, 0.9);
+        }
+        ul.produce-list li .img{
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+        ul.produce-list li .img>img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all .3s;
+        }
+        ul.produce-list li .bottom{
+            width: 100%;
+            height: calc(100% - 180px);
+            background-color: rgba(0, 0, 0, .6);
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            padding: 0 10px;
+            transition: all .3s;
+        }
+        .dropdown-menu{
+            background-color: #363737;
+            color: #e9ecef;
+        }
+        .dropdown-item{
+            color: #e9ecef;
+        }
+        /* 黑色背景色 */
+        section.cbc-black{
+            /*background-color: #282828;*/
+            background: url("/images/9220304.jpg") center center / cover no-repeat;
+            color: white;
+        }
+        .breadcrumb{
+            background-color: #384551;
+        }
+        .breadcrumb-item.active {
+            color: #fcfdfd;
+        }
+	.jumbotron {
+    	 background-color: #333940;
+	}
+        a, a:hover, a:link, a:focus, a:visited, a:active {
+            color: #fcfdfd;
+            text-decoration: none;
+            background-color: transparent;
+        }
+        .animated {
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+             -webkit-animation-fill-mode: none;
+             animation-fill-mode: none;
+        }
+        /*通用标题*/
+        .common-title{
+            height: 60px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        .common-title::before, .common-title::after{
+            content: '';
+            display: inline-block;
+            width: 150px;
+            border-top: 1px solid #ccc ;
+            box-sizing: border-box;
+            margin: 0 10px;
+        }
+        @media screen and (max-width: 576px) {
+            .common-title{
+                font-size: 18px;
+            }
+        }
+    </style>
+    <!--插槽-->
+    {% block style %}
+
+    {% endblock %}
+</head>
+<body>
+    <!--引入头部-->
+    {% include "header.html" %}
+
+    <!--我是内容插槽-->
+    {% block body %}
+
+    {% endblock %}
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=1UbNV4Cn3g6Ojk1PfRm6GcBLLGXqV1lU"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <!--留一个js的插槽-->
+    {% block script %}
+
+    {% endblock %}
+</body>
+</html>

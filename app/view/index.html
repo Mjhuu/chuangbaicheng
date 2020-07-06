@@ -1,0 +1,128 @@
+<!--继承base.html的基础模板-->
+{% extends "base.html" %}
+<!--新增样式-->
+{% block style %}
+<link href="/css/index.css" rel="stylesheet">
+{% endblock %}
+<body>
+{% include "header.html" %}
+<!--主要内容-->
+{% block body %}
+<section >
+    <!--顶部-->
+    <div class="header-top">
+        <div class="content animated zoomInLeft">
+            <h1>青岛创百城显示科技</h1>
+            <p>互动多媒体核心技术服务商</p>
+        </div>
+    </div>
+    <!--中间产品-->
+    <section class="produce">
+        <div class="container">
+            <div class="top">
+                <span class="title">核心产品</span> / Core product
+            </div>
+            <ul class="produce-list">
+                {% for item in produceArr %}
+                <li class="produce-item animated fadeOut">
+                    <a href="/kind/{{item}}">
+                        <div class="img">
+                            <img src="/images/{{item}}/timg.jfif" alt="">
+                        </div>
+                        <div class="bottom ellipsis">
+                            {{item}}
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    <!--联系我们-->
+    <section class="contact">
+        <div class="container">
+            <div class="top">
+                <span class="title">联系我们</span> / Contact us
+            </div>
+            <div class="row" style="padding: 20px 0;">
+                <div class="col-lg-7 order-2 order-lg-1">
+                    <div class="map" id="map">
+
+                    </div>
+                </div>
+                <div class="col-lg-5 order-1 order-lg-2 mb-3 mb-lg-0">
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <p class="mjhu-office"><span></span>公司：青岛创百城显示科技有限公司</p>
+                        </li>
+                        <li class="contact-item">
+                            <p class="mjhu-location2"><span></span>地址：山东省青岛市李沧区九水东路130号2号楼307-128</p>
+                        </li>
+                        <li class="contact-item">
+                            <p class="mjhu-mobile"><span></span>电话：18661787560</p>
+                        </li>
+                        <li class="contact-item">
+                            <p class="mjhu-phone"><span></span>手机：18661787560</p>
+                        </li>
+                        <li class="contact-item">
+                            <p class="mjhu-bubbles"><span></span>微信：CBCxianshikeji</p>
+                        </li>
+                        <li class="contact-item">
+                            <p class="mjhu-sphere"><span></span>备案号：<a target="_blank" href="http://www.beian.miit.gov.cn/" style="color: #fcfdfd">鲁ICP备20015006号</a></p>
+                        </li>
+                        <li class="contact-item">
+                            <p><img src="/images/beian.png" alt=""><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=37021302000698" style="color: #fcfdfd">鲁公网安备 37021302000698号</a></p>
+                        </li>
+                        <li class="contact-item">
+                            <img src="/images/wx.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+{% endblock %}
+<!--js插槽-->
+{% block script %}
+<script>
+    function ScrollAnimate(item){
+      this.top = $(item).offset().top;
+      let that = this;
+      let scrollH = $(document).scrollTop();  //滚动高度
+      let viewH = $(window).height();  //可见高度
+      if(that.top - viewH <= scrollH + 10){
+        $(item).removeClass('fadeOut');
+        $(item).removeClass('zoomInLeft');
+        $(item).addClass('zoomInLeft');
+      }
+      $(document).scroll(function() {
+        scrollH = $(document).scrollTop();  //滚动高度
+        viewH = $(window).height();  //可见高度
+        if(that.top - viewH <= scrollH + 10){
+          if(!$(item).hasClass('zoomInLeft')){
+            $(item).removeClass('fadeOut');
+            $(item).removeClass('zoomInLeft');
+            $(item).addClass('zoomInLeft');
+          }
+        }
+      });
+    }
+  $(function() {
+    let map = new BMap.Map("map");
+    map.centerAndZoom();
+    let local = new BMap.LocalSearch(map, {
+      renderOptions:{map: map}
+    });
+    local.search("山东省青岛市李沧区九水东路130号2号楼307-128");
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+    // 自定义动画
+    let projectList = Array.prototype.slice.call($('.produce-item'));
+    for(let i in projectList){
+      new ScrollAnimate(projectList[i]);
+    }
+
+  })
+</script>
+{% endblock %}
